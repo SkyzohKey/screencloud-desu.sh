@@ -1,6 +1,6 @@
 # screencloud-desu.sh
 
-[Desu.sh] screenshot upload plugin for [ScreenCloud](https://screencloud.net).]
+[Desu.sh](https://desu.sh) screenshot upload plugin for [ScreenCloud](https://screencloud.net).
 
 Installation
 =======
