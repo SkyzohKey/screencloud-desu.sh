@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>559</width>
-    <height>439</height>
+    <width>500</width>
+    <height>260</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -16,14 +16,32 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>260</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>260</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Desu.sh Uploader - Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="group_name">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="title">
-      <string>File Name</string>
+      <string>Upload network preferences</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
      <property name="flat">
       <bool>false</bool>
@@ -35,29 +53,191 @@
       <property name="formAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_nameFormat">
-        <property name="text">
-         <string>Format:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="input_name"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_result">
-        <property name="text">
-         <string>Result:</string>
-        </property>
-       </widget>
+      <item row="2" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout"/>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="label_example">
-        <property name="text">
-         <string>example</string>
+       <layout class="QGridLayout" name="gridLayout">
+        <property name="topMargin">
+         <number>0</number>
         </property>
-       </widget>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="group_http">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>250</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>HTTP(s)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <widget class="QRadioButton" name="radioButton">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>30</y>
+             <width>99</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Use HTTP</string>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="radioButton_2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>50</y>
+             <width>99</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Use HTTPS</string>
+           </property>
+          </widget>
+          <zorder>radioButton</zorder>
+          <zorder>radioButton_2</zorder>
+          <zorder>group_tor</zorder>
+          <zorder>group_tor</zorder>
+          <zorder>group_tor</zorder>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QGroupBox" name="group_tor">
+          <property name="minimumSize">
+           <size>
+            <width>290</width>
+            <height>90</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Tor SOCKS5</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>25</y>
+             <width>91</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color: rgb(0, 0, 0)
+}</string>
+           </property>
+           <property name="text">
+            <string>Tor Proxy IP:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>60</y>
+             <width>91</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+	color: rgb(0, 0, 0)
+}</string>
+           </property>
+           <property name="text">
+            <string>Tor Proxy port:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>20</y>
+             <width>181</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>127.0.0.1</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_2">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>55</y>
+             <width>181</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhDigitsOnly</set>
+           </property>
+           <property name="placeholderText">
+            <string>9050</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -94,7 +274,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>input_name</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>
