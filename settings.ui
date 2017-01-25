@@ -121,6 +121,9 @@
            <property name="text">
             <string>Use HTTPS</string>
            </property>
+           <property name="autoRepeat">
+            <bool>false</bool>
+           </property>
           </widget>
           <zorder>radioButton</zorder>
           <zorder>radioButton_2</zorder>
