@@ -53,6 +53,9 @@
       <property name="formAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
       <item row="2" column="0">
        <layout class="QVBoxLayout" name="verticalLayout"/>
       </item>
