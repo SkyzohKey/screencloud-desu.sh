@@ -20,7 +20,7 @@ class DesuUploader():
         settings.beginGroup("uploaders")
         settings.beginGroup("desu.sh")
         
-        self.nameFormat = settings.value("name-format", "screenshot-%H-%M-%S")
+        #self.nameFormat = settings.value("name-format", "screenshot-%H-%M-%S")
         self.copyLink = settings.value("copy-link", "true") in ["true", True]
 
         settings.endGroup()
@@ -31,7 +31,7 @@ class DesuUploader():
         settings.beginGroup("uploaders")
         settings.beginGroup("desu.sh")
         
-        settings.setValue("name-format", self.settingsDialog.group_name.input_name.text)
+        #settings.setValue("name-format", self.settingsDialog.group_name.input_name.text)
         settings.setValue("copy-link", self.settingsDialog.group_clipboard.checkbox_copy_link.checked)
         
         settings.endGroup()
@@ -39,19 +39,19 @@ class DesuUploader():
 
     def getFilename(self):
         self.loadSettings()
-        return ScreenCloud.formatFilename(self.nameFormat)
+        return ScreenCloud.formatFilename("screen.png")
 
     def showSettingsUI(self, parentWidget):
         self.parentWidget = parentWidget
         self.settingsDialog = self.uil.load(QFile(workingDir + "/settings.ui"), parentWidget)
-        self.settingsDialog.group_name.input_name.connect("textChanged(QString)", self.nameFormatEdited)
+        #self.settingsDialog.group_name.input_name.connect("textChanged(QString)", self.nameFormatEdited)
         self.settingsDialog.connect("accepted()", self.saveSettings)
         self.updateUi()
         self.settingsDialog.open()
 
     def updateUi(self):
         self.loadSettings()
-        self.settingsDialog.group_name.input_name.setText(self.nameFormat)
+        #self.settingsDialog.group_name.input_name.setText(self.nameFormat)
         self.settingsDialog.group_clipboard.checkbox_copy_link.setChecked(self.copyLink)
 
     def upload(self, screenshot, name):
