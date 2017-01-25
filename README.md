@@ -1,9 +1,12 @@
-# [Desu.sh](https://desu.sh) support for [ScreenCloud](https://screencloud.net/)
+# screencloud-desu.sh
 
-This is a simple plugin for the cross-platform screenshot-sharing program ScreenCloud that allows you to upload your screenshots to the temporary file-hosting website Desu.sh.
+[Desu.sh] screenshot upload plugin for [ScreenCloud](https://screencloud.net).]
 
-## Installation
+Installation
+=======
 
-Simply open the ScreenCloud preferences, navigate to the "Online Services" tab, click the "More services..." button, then click "Install from URL..."
-Punch in this url: https://github.com/SkyzohKey/screencloud-desu.sh/archive/master.zip
-Click "OK" and you should be good to go!
+`Preferences` -> `Online Services` -> `More services` -> `Install from URL`
+
+```
+https://github.com/SkyzohKey/screencloud-desu.sh/archive/master.zip
+```
