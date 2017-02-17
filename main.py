@@ -10,7 +10,7 @@ class DesuUploader():
         self.loadSettings()
         #self.apiUrl = "http://httpbin.org/post" # For debugging only.
         self.apiUrl = "https://doko.moe/upload.php"
-        self.linkUrl = "https://doko.moe.sh/%s"
+        self.linkUrl = "https://a.doko.moe/%s"
 
     def isConfigured(self):
         return True
