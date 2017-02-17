@@ -9,8 +9,8 @@ class DesuUploader():
         self.uil = QUiLoader()
         self.loadSettings()
         #self.apiUrl = "http://httpbin.org/post" # For debugging only.
-        self.apiUrl = "https://desu.sh/upload.php"
-        self.linkUrl = "https://a.desu.sh/%s"
+        self.apiUrl = "https://doko.moe/upload.php"
+        self.linkUrl = "https://doko.moe.sh/%s"
 
     def isConfigured(self):
         return True
@@ -18,8 +18,8 @@ class DesuUploader():
     def loadSettings(self):
         settings = QSettings()
         settings.beginGroup("uploaders")
-        settings.beginGroup("desu.sh")
-        
+        settings.beginGroup("doko.moe")
+
         self.nameFormat = settings.value("name-format", "screenshot-%H-%M-%S")
         self.copyLink = settings.value("copy-link", "true") in ["true", True]
 
@@ -29,11 +29,11 @@ class DesuUploader():
     def saveSettings(self):
         settings = QSettings()
         settings.beginGroup("uploaders")
-        settings.beginGroup("desu.sh")
-        
+        settings.beginGroup("doko.moe")
+
         settings.setValue("name-format", self.settingsDialog.group_name.input_name.text)
         settings.setValue("copy-link", self.settingsDialog.group_clipboard.checkbox_copy_link.checked)
-        
+
         settings.endGroup()
         settings.endGroup()
 
@@ -59,7 +59,7 @@ class DesuUploader():
         tmpFilename = tempfile.gettempdir() + "/" + ScreenCloud.formatFilename(str(time.time()))
         screenshot.save(QFile(tmpFilename), ScreenCloud.getScreenshotFormat())
         #data = {"name": name}
-        
+
         try:
             imgFormat = "image/%s" % ScreenCloud.getScreenshotFormat()
             files = [
@@ -68,7 +68,7 @@ class DesuUploader():
 
             response = requests.post(self.apiUrl, files=files)
             #response.raise_for_status()
-            
+
             print(name)
             print(tmpFilename)
             print(imgFormat)
@@ -77,14 +77,14 @@ class DesuUploader():
             res = json.loads(response.text)
             file_url = self.linkUrl % res["files"][0]["url"]
             print(file_url)
- 
+
             if self.copyLink:
                 ScreenCloud.setUrl(file_url)
 
         except requests.exceptions.RequestException as e:
-            ScreenCloud.setError("Failed to upload to Desu.sh: " + e.message)
+            ScreenCloud.setError("Failed to upload to doko.moe: " + e.message)
             return False
-        
+
         return True
 
     def nameFormatEdited(self, nameFormat):

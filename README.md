@@ -1,6 +1,8 @@
-# screencloud-desu.sh
+# screencloud-doko.moe
 
-[Desu.sh](https://desu.sh) screenshot upload plugin for [ScreenCloud](https://screencloud.net).
+The image uploader desu.sh was renamed to doko.moe and domain changed.
+
+[Doko.moe](https://doko.moe) screenshot upload plugin for [ScreenCloud](https://screencloud.net).
 
 Installation
 =======
